@@ -27,7 +27,7 @@ SECRET_KEY = '$d6%u-0b2yym)nqvd#^jxk@m@rqn8bfbhxh2*kz!tbivh9&-c0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nyllflix.herokuapp.com']
+ALLOWED_HOSTS = ['nyllflix.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 if not DEBUG:
-    STATIC_ROOT = ''
+    STATIC_ROOT = 'static_root'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
