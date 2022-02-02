@@ -12,7 +12,7 @@
 {% block content %}
     {% include 'partials/navbar.html' %}
     <main class='bg-primary_black min-h-screen w-full'>
-        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover bg-center" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0747%2F3829%2Fproducts%2FmL0879_44de0f6d-ea9f-429b-85c5-f26f855121e2_1024x1024.jpg%3Fv%3D1571445242&f=1&nofb=1');backdrop-filter:">
+        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover bg-center" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0747%2F3829%2Fproducts%2FmL0879_44de0f6d-ea9f-429b-85c5-f26f855121e2_1024x1024.jpg%3Fv%3D1571445242&f=1&nofb=1'); background-size: cover; background-position: center center">
             <div>
                 <h2 class="text-6xl font-semibold text-white my-4" style="box-shadow:0 20px 150px 200px #0008; background:#0008">
                     Vikings
@@ -51,9 +51,9 @@
                     </div> {% endcomment %}
 
                     {% for movie in movies %}
-                    <a>
+                    <a href="{% url 'core:movie_detail' movie_id=movie.uuid %}">
                         <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer overflow-hidden w-40" >
-                            <img src="{{ movie.flyer.url }}" class="w-full h-full" alt="">
+                            <img src="{{ movie.flyer.url }}" style="background-size: cover; background-position: center center" class="w-full h-full" alt="">
                         </div> 
                     </a>
                     {% endfor %}
