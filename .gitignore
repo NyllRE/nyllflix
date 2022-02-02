@@ -1,5 +1,3 @@
 zenv/
-core/__pycache__/
-django_netflix/__pycache__/
 db.sqlite3
 static_root/
