@@ -1,6 +1,5 @@
 zenv/
 core/__pycache__/
-core/migrations/
 django_netflix/__pycache__/
 db.sqlite3
 static_root/
