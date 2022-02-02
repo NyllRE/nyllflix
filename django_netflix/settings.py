@@ -130,6 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# if in deploy mode
 if not DEBUG:
     STATIC_ROOT = 'static_root'
 
