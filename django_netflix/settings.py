@@ -131,8 +131,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # if in deploy mode
-if not DEBUG:
-    STATIC_ROOT = 'static_root'
+# if not DEBUG:
+STATIC_ROOT = 'static_root'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
