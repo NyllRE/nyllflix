@@ -22,7 +22,23 @@
                 {% if form.errors %}
                 
                 <p class="text-primary_red ">
-                    {{form.non_field_errors}}
+                    {{ form.errors }}
+                    {% comment %} {% for key, values in form.errors %}
+                        {{ values }}
+                    {% endfor %} {% endcomment %}
+                    {% comment %} 
+                        {% if form.errors.email %}
+                            {{ form.errors.email }}
+                        {% endif %}
+
+                        {% if form.errors.password1 %}
+                            {{ form.errors.password1 }}
+                        {% endif %}
+
+                        {% if form.errors.password2 %}
+                            {{ form.errors.password2 }}
+                        {% endif %}
+                    {% endcomment %}
                 </p>
                    
                 {% endif %}
@@ -38,7 +54,7 @@
                     <Label class='text-lg font-medium mb-3'>
                         Password
                     </Label>
-                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="password" name="password" id="id_password" placeholder="Password">
+                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="password" name="password1" id="id_password1" placeholder="Password">
                 </div>
                 <div class='my-3'> 
                     <Label class='text-lg font-medium mb-3'>
@@ -46,6 +62,9 @@
                     </Label>
                     <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="password" name="password2" id="id_password2" placeholder="Password">
                 </div>
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
                 <div class="flex justify-center items-center">
                     <button class="py-2 px-4 bg-primary_red text-gray-100 font-medium text-lg rounded-md">
                         Sign Up
@@ -54,7 +73,7 @@
 
                 <div class="text-center mt-4">
                     <p>
-                        Have account already ? <a href="/signup.html" class="text-blue-600"> Log In</a>
+                        Have account already ? <a href="{% url 'account_login' %}" class="text-blue-600"> Log In</a>
                     </p>
                 </div>
             </form>

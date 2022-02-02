@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-</head>
-<body class='font-primary'>
-    <nav class="flex justify-between items-center py-3 px-4 fixed w-full z-50">
-        <div class="w-6/12">
-            <img src="assets/netflix.png" alt="logo" class="w-5/12 md:w-2/12">
-        </div>
+{% extends 'base.html' %}
+{% load static %}
 
-        <div>
-            <button class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
-                Log out
-            </button>
-        </div>
-        
-    </nav>
+{% block title %}
+    Watch
+{% endblock title %}
+
+{% block others %}
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+{% endblock others %}
+
+{% block content %}
+    {% include 'partials/navbar.html' %}
     <main class='bg-primary_black min-h-screen w-full'>
-        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover" style="background-image: url('assets/movie.webp');">
+        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover bg-center" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0747%2F3829%2Fproducts%2FmL0879_44de0f6d-ea9f-429b-85c5-f26f855121e2_1024x1024.jpg%3Fv%3D1571445242&f=1&nofb=1');backdrop-filter:">
             <div>
-                <h2 class="text-6xl font-semibold text-white my-4">
+                <h2 class="text-6xl font-semibold text-white my-4" style="box-shadow:0 20px 150px 200px #0008; background:#0008">
                     Vikings
                 </h2>
                 <p class=" w-11/12 md:w-5/12 font-medium text-white my-4">
@@ -32,7 +22,7 @@
                 </p>
                 <div class="flex my-4">
 
-                    <button class="flex items-center bg-white py-2 px-5 rounded-md">
+                    <button class="flex items-center bg-white py-2 px-5 rounded-md" style="color:black">
                         <ion-icon name="play" class="text-2xl"></ion-icon>
                         <span class="ml-3 font-medium">
                             Play
@@ -55,35 +45,22 @@
                     Popular on Netflix
                 </h2>
                 <div class="flex justify-center  items-center min-w-full  movie_lis">
-                    <div class=" h-40 m-4  bg-blue-500 flex-shrink-0 rounded-md cursor-pointer w-40">
-                        
-                    </div>
 
-                    <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer w-40" >
-        
-                    </div>
+                    {% comment %} <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer overflow-hidden w-40" >
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0747%2F3829%2Fproducts%2FmL0879_44de0f6d-ea9f-429b-85c5-f26f855121e2_1024x1024.jpg%3Fv%3D1571445242&f=1&nofb=1" class="w-full h-full" alt="">
+                    </div> {% endcomment %}
 
-                    <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer w-40" >
-        
-                    </div>
+                    {% for movie in movies %}
+                    <a>
+                        <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer overflow-hidden w-40" >
+                            <img src="{{ movie.flyer.url }}" class="w-full h-full" alt="">
+                        </div> 
+                    </a>
+                    {% endfor %}
 
-                    <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer w-40" >
-        
-                    </div>
-
-                    <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer overflow-hidden w-40" >
-                        <img src="assets/movie.webp" class="w-full h-full " alt="">
-                    </div>
-
-                    <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer w-40" >
-        
-                    </div>
-
-                
                 </div>
             </div>
         </section>
         
     </main>
-</body>
-</html>
+{% endblock content %}
