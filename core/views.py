@@ -71,7 +71,8 @@ class ShowMovie(View):
             movie=Movie.objects.get(uuid=movie_id)
 
             movie=movie.videos.values()
-            
+          
+            # remember to add a comment functionality
 
             return render(request,'showMovie.html',{
                 'movie':list(movie)
