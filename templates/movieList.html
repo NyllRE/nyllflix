@@ -11,24 +11,30 @@
 
 {% block content %}
     {% include 'partials/navbar.html' %}
-    <main class='bg-primary_black min-h-screen w-full'>
-        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover bg-center" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0747%2F3829%2Fproducts%2FmL0879_44de0f6d-ea9f-429b-85c5-f26f855121e2_1024x1024.jpg%3Fv%3D1571445242&f=1&nofb=1'); background-size: cover; background-position: center center">
+    <main class='bg-black min-h-screen w-full'>
+        <section
+            class="h-screen relative bg-no-repeat pb-8 pl-6 flex justify-end items-end bg-cover bg-center"
+            style="background-image: url('https://i.pinimg.com/originals/40/7f/b3/407fb3e6d9dda92b08518af9a1acac33.jpg'); background-size: cover; background-position: center center; box-shadow: inset 30em -40em 20em -20em black"
+        >
             <div>
-                <h2 class="text-6xl font-semibold text-white my-4" style="box-shadow:0 20px 150px 200px #0008; background:#0008">
-                    Vikings
+                <h2
+                    class="text-6xl font-semibold text-white my-4"
+                    style="box-shadow:0 20px 150px 200px #0008; background:#0008"
+                >
+                    Breaking Bad
                 </h2>
                 <p class=" w-11/12 md:w-5/12 font-medium text-white my-4">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus repellendus odit perspiciatis nostrum culpa exercitationem quis. Ab obcaecati odio minus. Dolorum sapiente eaque, repellendus ea fugiat amet fuga libero at!
+                    Breaking Bad is an American crime drama television series created and produced by Vince Gilligan for AMC. Set and filmed in Albuquerque, New Mexico, the series follows Walter White, an underpaid, overqualified, and dispirited high-school chemistry teacher who is struggling with a recent diagnosis of stage-three lung cancer.
                 </p>
                 <div class="flex my-4">
-
-                    <button class="flex items-center bg-white py-2 px-5 rounded-md" style="color:black">
-                        <ion-icon name="play" class="text-2xl"></ion-icon>
-                        <span class="ml-3 font-medium">
-                            Play
-                        </span>
-                    </button>
-    
+                    <a href="/watch/detail/4259f1d3-b73a-4fba-97d8-1e1002bdc85e/">
+                        <button class="flex items-center bg-white py-2 px-5 rounded-md" style="color:black">
+                            <ion-icon name="play" class="text-2xl"></ion-icon>
+                            <span class="ml-3 font-medium">
+                                Play
+                            </span>
+                        </button>
+                    </a>
                     <button class="ml-4 text-white flex items-center bg-gray-500 bg-opacity-80 py-2 px-5 rounded-md">
                        
                         <ion-icon name="information-circle-outline" class="text-2xl" ></ion-icon>
@@ -39,7 +45,7 @@
                 </div>
             </div>
         </section> 
-        <section class='bg-primary_black  min-h-screen flex justify-center py-10'>
+        <section class='bg-black  min-h-screen flex justify-center py-10'>
             <div class="p-8 w-10/12 relative" >
                 <h2 class="text-gray-200 text-2xl font-medium">
                     Popular on Netflix
@@ -52,15 +58,17 @@
 
                     {% for movie in movies %}
                     <a href="{% url 'core:movie_detail' movie_id=movie.uuid %}">
-                        <div class="flex-shrink-0  h-40 m-4  bg-blue-500 rounded-md cursor-pointer overflow-hidden w-40" >
-                            <img src="{{ movie.flyer.url }}" style="background-size: cover; background-position: center center" class="w-full h-full" alt="">
-                        </div> 
+                        <div
+                            class="flex-shrink-0 m-4 bg-blue-500 rounded-md cursor-pointer overflow-hidden bg-cover"
+                            style="background: url({{ movie.flyer.url }}); background-position: center; background-size: cover; height: 20em; aspect-ratio: 9/14"
+                        >
+                            {% comment %} <img src="{{ movie.flyer.url }}" style="background-size: cover; object-position: center" class="h-full" alt=""> {% endcomment %}
+                        </div>
                     </a>
                     {% endfor %}
 
                 </div>
             </div>
         </section>
-        
     </main>
 {% endblock content %}

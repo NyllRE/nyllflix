@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-   {% load static %}
+    {% load static %}
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Nyllflix - {% block title %}{% endblock title %} </title>
-   <link rel="stylesheet" href="{% static 'style.css' %}">
-   {% block others %}{% endblock others %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nyllflix - {% block title %}{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% block others %}{% endblock others %}
 </head>
 <body class="bg-black text-gray-100 font-primary">
-   {% block content %}
-   
-   {% endblock content %}
+    {% block content %}
+    {% endblock content %}
 
-   <script>
+    <script>
         const nav = document.querySelector('nav')
 
-        document.addEventListener("scroll",e=>{
-            
+        document.addEventListener("scroll",e => {
             if(scrollY>100){
                 nav.classList.add('bg-gray-900')
-          
             }else{
                 nav.classList.remove('bg-gray-900')
-                
             }
         })
-
     </script>
 </body>
 </html>
