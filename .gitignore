@@ -2,5 +2,5 @@ zenv/
 env/
 db.sqlite3
 media/**
-static_root/
+static/
 **/__pycache__
