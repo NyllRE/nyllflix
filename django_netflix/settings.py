@@ -16,8 +16,8 @@ from dotenv import load_dotenv
 
 # Load .env file
 load_dotenv()
-production = os.environ.get('PROD')
-DEBUG = production == 'True'
+development = os.environ.get('DEV')
+DEBUG = development == 'True'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +33,7 @@ SECRET_KEY = '$d6%u-0b2yym)nqvd#^jxk@m@rqn8bfbhxh2*kz!tbivh9&-c0'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['*'] if DEBUG else ['nyllre.eu.pythonanywhere.com']
+ALLOWED_HOSTS = ['*'] if DEBUG else ['nyllre.eu.pythonanywhere.com', 'localhost']
 
 
 # Application definition
