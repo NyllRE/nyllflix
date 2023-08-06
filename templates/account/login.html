@@ -12,6 +12,7 @@
 {% block content %}
 
    
+    {% comment %} {% include '../partials/navbar.html' %} {% endcomment %}
     {% include '../partials/navbar.html' with AUTH='false' %}
     <header class="min-h-screen w-full bg-black bg-opacity-75 showcase border-gray-600 border-b-8 flex justify-center py-20 bg-no-repeat"  style="background-image: url('{% static 'background_netflix.jpg' %}');">
         <div class="z-10 h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
