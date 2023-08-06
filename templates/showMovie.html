@@ -15,7 +15,7 @@
 
 {% block content %}
 
-    {% include 'partials/navbar.html' %}
+    {% comment %} {% include 'partials/navbar.html' %} {% endcomment %}
     <main class='bg-primary_black h-full w-full '>
 
         {{ movie|json_script:"movie_data" }}
