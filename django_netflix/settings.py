@@ -144,12 +144,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 MEDIA_ROOT=BASE_DIR/'media'
 MEDIA_URL='/media/'
-
-# STATICFILES_DIRS=[
-#     BASE_DIR/'static'
-# ]
 
 # auth strings
 AUTH_USER_MODEL = 'core.CustomUser'
